@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/black.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-markdown>
+					## Linguagens de Programação
+					<p>Prof. Marco Andrade</p>
+					<br />
+					<a mailto="marco.andrade@ifro.edu.br">marco.andrade@ifro.edu.br</a>
+				</section>
+
+				<section data-markdown>
+					## Avaliação
+					- 3x provas [20 pontos] = 60 pontos
+					- 1x trabalho prático em dupla com apresentação oral [20 pontos] = 20 pontos
+					- 1x trabalho individual [20 pontos] = 20 pontos
+					- Total de 100 pontos
+				</section>
+
+				<section data-markdown>
+					## Criação do usuário no Ubuntu
+					<pre><code>
+	sudo useradd nome
+	sudo passwd nome
+	sudo usermod -aG sudo nome</code></pre>
+				</section>
+
+				<section>
+					<h2>Instalação do Node com NVM</h2>
+					<pre><code>
+	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
+	source ~/.bashrc
+	nvm list-remote
+	nvm install v20.0.0</code></pre>
+				</section>
+				
+				<section>
+					<h2>Criação do primeiro projeto TypeScript</h2>
+					<pre><code>
+	mkdir aula-1-ts
+	cd aula-1-ts
+	code .
+	npm init -y
+	npm install ts-node
+	npm install -g nodemon</code></pre>
+				</section>
+
+				<section data-markdown>
+					## Criando as pastas do projeto
+					<pre><code>
+	mkdir dist
+	mkdir src</code></pre>
+				</section>
+
+				<section>
+					<h2></h2>
+					<pre><code>
+	let nome: string = 'João';
+	let idade: number = 27;
+	
+	idade = '34'; // Erro de atribuição!
+	
+	console.log(`Nome: ${nome}`);
+	console.log(`Idade: ${idade}`);</code></pre>
+				</section>
+
+				<section data-markdown>
+					## Configuração do package.json
+					<pre><code>
+	"scripts": {
+		"dev": "nodemon src/index.ts",
+		"start": "node dist/index.js",
+		"build": "tsc"
+	}</code></pre>
+				</section>
+
+				<section>
+					<h2>Configuração do tsconfig.json</h2>
+					<pre><code>
+	"outDir": "./dist"
+					</code></pre>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
